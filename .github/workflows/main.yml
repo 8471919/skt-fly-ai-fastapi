@@ -18,7 +18,10 @@ jobs:
           python-version: "3.9"
 
       - name: Display Python python-version
-        run: python -c "import sys; print(sys.version)"
+        run: |
+          python -c "import sys; print(sys.version)"
+
+          echo $(${{ secrets.DOCKER_USERNAME}})
 
       - name: Build & Push Docker image
         uses: mr-smithers-excellent/docker-build-push@v5
