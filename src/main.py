@@ -3,7 +3,7 @@ import uvicorn
 
 from src.api.index import api_router
 
-app = FastAPI(docs_url="api_docs", openapi_url="open-api")
+app = FastAPI(docs_url="/api_docs", openapi_url="/open-api")
 
 app.include_router(api_router, prefix="/api")
 
