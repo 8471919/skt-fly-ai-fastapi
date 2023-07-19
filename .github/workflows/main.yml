@@ -24,8 +24,8 @@ jobs:
       - name: Build & Push Docker image
         uses: mr-smithers-excellent/docker-build-push@v5
         with:
-          image: ${{ secrets.DOCKER_USERNAME }}/skt-fly-ai-fastapi
+          image: ${{ secrets.DOCKERHUB_USERNAME }}/skt-fly-ai-fastapi
           tags: v3, latest
           registry: docker.io
-          username: ${{ secrets.DOCKER_USERNAME }}
-          password: ${{ secrets.DOCKER_TOKEN }}
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
