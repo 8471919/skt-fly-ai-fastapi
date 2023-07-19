@@ -20,7 +20,7 @@ jobs:
       - name: Display Python python-version
         run: |
           python -c "import sys; print(sys.version)"
-
+          &&
           echo $(${{ secrets.DOCKER_USERNAME}})
 
       - name: Build & Push Docker image
@@ -28,5 +28,6 @@ jobs:
         with:
           image: ${{ secrets.DOCKER_USERNAME }}/skt-fly-ai-fastapi
           tags: v3, latest
+          registry: docker.io
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_TOKEN }}
